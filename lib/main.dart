@@ -21,7 +21,7 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
  
-class _MyHomePageState extends State&lt;MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> {
  
   String nextPage = "https://swapi.co/api/people";
  
@@ -42,7 +42,7 @@ class _MyHomePageState extends State&lt;MyHomePage> {
       final response = await dio.get(nextPage);
       List tempList = new List();
       nextPage = response.data['next'];
-      for (int i = 0; i &lt; response.data['results'].length; i++) {
+      for (int i = 0; i < response.data['results'].length; i++) {
         tempList.add(response.data['results'][i]);
       }
  
